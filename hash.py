@@ -16,23 +16,23 @@ try:
                 print("Empty Field")
                 break
 
-            option = int(input("\nOptions:\n1 - text encrypted\n2 - text decrypted\n3 - exit\n4 - new text\n"))
+            option = int(input("\nOptions:\n1 - text encrypted\n2 - text decrypted\n3 - new text\n4 - exit\n"))
             if option == 1:
                 print(f"--Text Encrypted--\nText : {encry_list}")
 
             elif option == 2:
                 print(f"--Text Decrypted--\nText: {before}")
-
-            elif option == 3:
-                print("--Exit--\nGoodbye :)")
-                break
             
-            elif option == 4:    
+            elif option == 3:    
                 text = str(input("Inform the text: "))
                 before = text
                 text_encrypted = hashlib.md5(text.encode())
                 text_encrypted = text_encrypted.hexdigest()
                 encry_list = text_encrypted
+            
+            elif option == 4:
+                print("--Exit--\nGoodbye :)")
+                break
             
             else:
                 print("ERROR\nTry again")
@@ -42,6 +42,7 @@ try:
 
 except ValueError :
     print("ERROR\nTry again")
+
 
 
     
